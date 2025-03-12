@@ -1,0 +1,111 @@
+#api for listing
+###
+
+GET  http://127.0.0.1:8000/api/category/
+
+#api for create category
+###
+
+POST  http://127.0.0.1:8000/api/category/
+Content-Type: application/json
+
+{
+    "name":"travel"
+}
+
+
+#api for adding a new product
+###
+
+POSt  http://127.0.0.1:8000/api/category/1/products/
+Content-Type: application/json
+
+{
+  "title":"orange",
+    "description":"orange description",
+    "price":75
+
+}
+
+
+# api call creating products
+
+###
+
+POST http://127.0.0.1:8000/api/products/
+Content-Type: application/json
+
+{
+    "title":"mango",
+    "description":"mango description",
+    "price":75
+
+}
+
+
+
+#api call for listing  all products
+###
+
+GET  http://127.0.0.1:8000/api/products/
+Content-Type: application/json
+
+
+#api call for updating specific product
+###
+
+PUT http://127.0.0.1:8000/api/products/1/
+Content-Type: application/json
+
+{
+      "id":1,
+    "title": "grapes",
+    "description": "grapes description",
+    "price": "150.00",
+    "category_object": 1
+
+    
+}
+
+#api call for specific   product
+###
+
+GET  http://127.0.0.1:8000/api/products/
+Content-Type: application/json
+
+
+
+
+
+# specific product detail
+###
+GET http://127.0.0.1:8000/api/products?category=fruits
+# ? optional query parameter
+
+
+#api for creating order
+###
+
+POST  http://127.0.0.1:8000/api/orders/
+Content-Type: application/json
+
+{
+    "phone":7403365333
+}
+
+#api call for adding order items to order
+###
+
+POST  http://127.0.0.1:8000/api/orders/1/items/
+Content-Type: application/json
+
+{
+    "product_object":2,
+    "qty":2
+}
+
+
+#api for order detail view
+###
+
+GET  http://127.0.0.1:8000/api/orders/3/
